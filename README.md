@@ -6,6 +6,7 @@
 
 - Pandas
 - Numpy
+- Matplotlib
 
 ### Libraries used for Preprocessing 
 
