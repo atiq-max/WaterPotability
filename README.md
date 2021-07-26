@@ -19,8 +19,9 @@
 
 #### Preliminary training results without model tuning
 
-| Model                            |  Accuracy Score  |
-|                                  |  Train   | Test  |
+##### Accuracy Scores
+ 
+| Model                            |  Train   | Test  |
 | -------------------------------- | -------- |-------|
 | Logistic Regression              |   60.9%  | 61.3% |
 | Linear Support Vector Classifier |   61.1%  | 61.9% |
