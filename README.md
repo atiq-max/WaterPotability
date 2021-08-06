@@ -16,7 +16,12 @@
 
 - Logistic Regression
 - Linear SVC (Support Vector Classifier)
+- Decision Tree Classifier
 - Random Forest Classifier
+- Linear Support Vector Classifier
+- K-Nearest-Neighbor
+- Gaussian Naive Bayes
+
 
 #### Preliminary training results without model tuning
 
