@@ -35,6 +35,10 @@ Previous accuracy scores were produced due to not using a Scaler and using Media
 | Model                            |  Train   | Test  |
 | -------------------------------- | -------- |-------|
 | Logistic Regression              |   60.2%  | 62.8% |
-| Decision Tree Classifier         |   73.1%  | 64.2% |
-| Random Forest Classifier         |   60.2%  | 62.8% |
-| Linear Support Vector Classifier |   60.2%  | 62.8% |
+| Decision Tree Classifier         |   73.5%  | 65.6% |
+| Random Forest Classifier         |   60.6%  | 62.3% |
+| Linear Support Vector Classifier |   60.6%  | 62.3% |
+| K Nearest Neighbor               |   68.2%  | 66.7% |
+| Gaussian Naive Bayes             |   62.8%  | 63.6% |
+
+#### Highest test accuracy reached over KNN
