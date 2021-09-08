@@ -1,6 +1,8 @@
 # Water Polability Project
 
-## Kaggle Dataset
+### Dataset
+
+- [Link](https://www.kaggle.com/adityakadiwal/water-potability) to the dataset
 
 ### Libraries used for Data Analysis
 
@@ -23,21 +25,38 @@
 - Gaussian Naive Bayes
 - Gradient Boost (with and without tuning)
 - Multi-Layer Perceptron (Artificial Neural Network)
+- Extreme Gradient Boosting (XGBoost)
+- Light Gradient Boosting Machine (LGBM)
+- Categorical Gradient Boosting (CatBoost)
 
+### Data PreProcessing
 
-#### Preliminary training results without model tuning
+- Data contains some columns having null values, null values were replaced with mean values `dataframe['col'].mean()`
+- Data is scaled using SciKit Learn Standard scaler
+- Data is split into 75 to 25, train-test split 
+- X axis consisting of all the columns except **Potability**
+- Y axis consisting of **Potability**
 
-##### Accuracy Scores
- 
-| Model                            |  Train   | Test  |
-| -------------------------------- | -------- |-------|
-| Logistic Regression              |   60.9%  | 61.3% |
-| Linear Support Vector Classifier |   61.1%  | 61.9% |
-| Random Forest Classifier         |   100%   | 65.7% |
+### Training and Tuning Params
 
-Previous accuracy scores were produced due to not using a Scaler and using Median to replace null values and used a 75-25 split.
+#### Training
 
-##### Trial with replacing null values with column means and using Standard Scaler with a 75-25 split
+- Model Object primarily defined (Sklearn model, except for XGBoost, LGBM and CatBoost)
+- Model trained using `model.fit()`
+- Training accuracy or score from `model.score()`
+- Testing accuracy is calculated from `accuracy_score()` after prediction is made with test data
+- Classification report is generated along with Confusion Matrix for the prediction
+
+#### Tuning
+
+- Define Tuning parameters to test over
+- Define default model object
+- Define cross-validation model for tuning Hyper-parameters using GridSearchCV
+- Find best parameters after fitting with training data
+- Define model object with computed *best parameters*
+- Repeat training process
+
+### Results
 
 | Model                            |  Train   | Test  |
 | -------------------------------- | -------- |-------|
@@ -50,5 +69,13 @@ Previous accuracy scores were produced due to not using a Scaler and using Media
 | Gradient Boosting                |   74.1%  | 66.1% |
 | Gradient Boosting (tuned params) |   80.3%  | 67.5% |
 | Multi-Layer Perceptron           |   83.5%  | 65.2% |
+| Extreme Gradient Boost (tuned)   |   88.8%  | 68.6% |
+| Light GBM (tuned)                |   88.6%  | 66.8% |
+| Categorical (Cat) Gradient Boost |   89.3%  | 69.1% |
 
-#### Highest test accuracy reached over Random Forest Classifier
+##### Highest test accuracy reached over Categorical Gradient Boost
+
+### Conclusion
+
+The models were primarily trained by droping null cells and replacing null cells with median and mode values for the column. 
+Replacing with mean values showed the best results. Highest training and test accuracy is reach by **CatBoost**
